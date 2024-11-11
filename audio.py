@@ -1,6 +1,9 @@
 import serial
 import pygame
 import time
+import pyttsx3
+
+engine = pyttsx3.init()
 
 # Initialize Serial port (replace 'COM6' with your Arduino's port)
 ser = serial.Serial('COM6', 9600)

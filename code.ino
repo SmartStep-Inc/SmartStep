@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>   // Include the SoftwareSerial library
 
-SoftwareSerial Serial1(2, 3);  // Define software serial for LiDAR (pins 2, 3)
+SoftwareSerial Serial1(22, 21);  // Define software serial for LiDAR
 
 int dist;                      // Distance measurements of LiDAR
 int strength;                  // Signal strength of LiDAR
