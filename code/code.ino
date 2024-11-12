@@ -1,6 +1,6 @@
-#include <SoftwareSerial.h>   // Include the SoftwareSerial library
+#include <HardwareSerial.h>   // Include the HardwareSerial library
 
-SoftwareSerial Serial1(22, 21);  // Define software serial for LiDAR
+HardwareSerial SerialLidar(1);  // Define hardware serial for LiDAR, using UART1
 
 int dist;                      // Distance measurements of LiDAR
 int strength;                  // Signal strength of LiDAR
@@ -11,17 +11,17 @@ const int HEADER = 0x59;       // Frame header of the data package
 
 void setup() {
   Serial.begin(9600);           // Start the serial monitor at 9600 baud
-  Serial1.begin(115200);        // Start the LiDAR serial at 115200 baud
+  SerialLidar.begin(115200, SERIAL_8N1, 22, 21); // Start LiDAR serial at 115200 baud on pins 22 (RX) and 21 (TX)
 }
 
 void loop() {
-  if (Serial1.available()) {    // Check if LiDAR serial has data
-    if (Serial1.read() == HEADER) {  // Look for header byte
+  if (SerialLidar.available()) {    // Check if LiDAR serial has data
+    if (SerialLidar.read() == HEADER) {  // Look for header byte
       uart[0] = HEADER;
-      if (Serial1.read() == HEADER) {  // Look for second header byte
+      if (SerialLidar.read() == HEADER) {  // Look for second header byte
         uart[1] = HEADER;
         for (i = 2; i < 9; i++) {      // Read remaining data into uart array
-          uart[i] = Serial1.read();
+          uart[i] = SerialLidar.read();
         }
         check = uart[0] + uart[1] + uart[2] + uart[3] + uart[4] + uart[5] + uart[6] + uart[7];
         if (uart[8] == (check & 0xff)) {  // Verify checksum
@@ -36,8 +36,6 @@ void loop() {
             Serial.println("PLAY_SOUND");  // Send "PLAY_SOUND" command over Serial
           } else if (dist < 10) {
             Serial.println("BLOCKED");
-          } else if (dist == -1 || dist < -1) {
-            Serial.println("STOP_SOUND");  // Send "STOP_SOUND" command if not in range
           } else {
             Serial.println("STOP_SOUND");  // Send "STOP_SOUND" command if not in range
           }
