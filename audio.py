@@ -4,9 +4,11 @@ import time
 import pyttsx3
 
 engine = pyttsx3.init()
+port = input("Port: ")
+print(f"Port COM{port}")
 
 # Initialize Serial port (replace 'COM6' with your Arduino's port)
-ser = serial.Serial('COM6', 9600)
+ser = serial.Serial(f'COM{port}', 9600)
 pygame.mixer.init()
 
 # State flags
