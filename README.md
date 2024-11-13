@@ -1,5 +1,5 @@
-**SmartStep**
-SmartStep is an innovative smart shoe designed to assist visually impaired individuals in navigating their surroundings. Powered by an ESP32 microcontroller and equipped with a LiDAR sensor, this smart shoe detects obstacles in real-time and provides auditory feedback via a web server. The LiDAR sensor continuously scans for objects, while the ESP32 processes the data to assess proximity, ensuring safe and intuitive navigation. SmartStep enhances spatial awareness, promoting independence and mobility.
+<h1>SmartStep</h1>
+<h3>SmartStep is an innovative smart shoe designed to assist visually impaired individuals in navigating their surroundings. Powered by an ESP32 microcontroller and equipped with a LiDAR sensor, this smart shoe detects obstacles in real-time and provides auditory feedback via a web server. The LiDAR sensor continuously scans for objects, while the ESP32 processes the data to assess proximity, ensuring safe and intuitive navigation. SmartStep enhances spatial awareness, promoting independence and mobility.</h3>
 
 **Features**
 **Real-time obstacle detection**: Detects objects within 10-250 cm.
