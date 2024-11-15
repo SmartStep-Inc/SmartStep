@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Alert</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .title {
+            position: relative;
+            top: -50px; /* Adjust this value to move the title higher or lower */
+            text-align: center;
+        }
+
+        /* Body styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333; /* Dark gray background */
+            color: #ffffff; /* White text */
+            font-family: Arial, sans-serif;
+            flex-direction: column; /* Stack items vertically */
+        }
+
+        /* Centered container */
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #444; /* Slightly lighter gray */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">SmartStep Beta v1.3</h1>
+    <div class="container">
+        <h1>Waiting for detection...</h1>
+        <!-- Audio player for blocked.mp3 (hidden by default) -->
+        <audio id="alertSound" src="blocked.mp3" preload="auto"></audio>
+    </div>
+
+    <script>
+        async function checkDetection() {
+            try {
+                const response = await fetch('/detect');
+                if (response.ok) {
+                    document.getElementById('alertSound').play(); // Play the audio
+                    alert('Object detected!'); // Optional alert
+                }
+            } catch (error) {
+                console.error("Detection check failed:", error);
+            }
+        }
+        setInterval(checkDetection, 2000); // Poll every 2 seconds
+    </script>
+</body>
+</html>
