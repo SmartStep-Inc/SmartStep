@@ -49,9 +49,10 @@ With its compact design and intuitive functionality, SmartStep empowers users wi
 
 <h2 style="color: #2196F3;">🛠️ Installation Made Simple</h2>
 <ol style="font-size: 1.1em; line-height: 1.8;">
-  <li>Upload the provided code to your ESP32 microcontroller and set the baud rate to <code>115200</code>.</li>
+  <li>Upload the provided code to your ESP32 microcontroller</li>
   <li>Replace the Wi-Fi credentials in the code with your hotspot's <code>SSID</code> and <code>Password</code>.</li>
   <li>Power up the ESP32, place it in the shoe, and you're all set!</li>
+  <li>Just open 11.1.65:3000 on the browser of your mobile device and start using the shoe!</li>
 </ol>
 
 <h3 style="text-align: center; font-style: italic; color: #555;">“Step boldly into the future with SmartStep, where every stride is smart, safe, and empowering.”</h3>
