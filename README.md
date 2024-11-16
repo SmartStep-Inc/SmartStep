@@ -1,10 +1,8 @@
 <h1 style="text-align: center; color: #2d89ef; font-family: 'Arial', sans-serif;">SmartStep: Walk Your Way to Independence</h1>
 
-<h3 style="font-family: 'Georgia', serif; line-height: 1.6; text-align: justify;">
 Introducing <strong>SmartStep</strong>, a groundbreaking innovation designed to transform the lives of visually impaired individuals. This cutting-edge smart shoe, powered by the mighty ESP32 microcontroller and a high-precision LiDAR sensor, acts as a guardian for safe navigation. By detecting obstacles in real time and providing seamless auditory feedback via a web server, <strong>SmartStep</strong> ensures that every step is confident and secure. 
-<br><br>
+
 With its compact design and intuitive functionality, SmartStep empowers users with enhanced spatial awareness, granting independence like never before.
-</h3>
 
 <hr style="border: 1px solid #ccc; margin: 20px 0;">
 
