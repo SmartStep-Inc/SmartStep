@@ -57,3 +57,5 @@ With its compact design and intuitive functionality, SmartStep empowers users wi
 </ol>
 
 <h3 style="text-align: center; font-style: italic; color: #555;">“Step boldly into the future with SmartStep, where every stride is smart, safe, and empowering.”</h3>
+
+![SmartStep: Innovative Assistive Shoe](readme-image.jpg)
