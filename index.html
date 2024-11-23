@@ -1,70 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Detection Alert</title>
-    <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .title {
-            position: relative;
-            top: -50px; /* Adjust this value to move the title higher or lower */
-            text-align: center;
-        }
-
-        /* Body styling */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #333; /* Dark gray background */
-            color: #ffffff; /* White text */
-            font-family: Arial, sans-serif;
-            flex-direction: column; /* Stack items vertically */
-        }
-
-        /* Centered container */
-        .container {
-            text-align: center;
-            padding: 20px;
-            background-color: #444; /* Slightly lighter gray */
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
-        }
-
-        /* Heading styling */
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStep | AI Navigation Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <h1 class="title">SmartStep Beta v1.3</h1>
-    <div class="container">
-        <h1>Waiting for detection...</h1>
-        <!-- Audio player for blocked.mp3 (hidden by default) -->
-        <audio id="alertSound" src="blocked.mp3" preload="auto"></audio>
+    <nav>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-right" data-aos-delay="200">
+                <div class="title-container">
+                    <h2 class="main-title">Meet</h2>
+                    <h2 class="main-title brand">SmartStep</h2>
+                    <h2 class="subtitle">The AI Navigation Assistant</h2>
+                </div>
+                <div class="github-button">
+                    <a href="https://github.com/SmartStep-Inc/" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+                <img src="logo.svg" alt="SmartStep Logo" class="logo">
+            </div>
+        </div>
+    </section>
+
+    <div class="cards-container">
+        <div class="card" data-aos="fade-right" data-aos-duration="1000">
+            <h2 class="section-title">What is SmartStep?</h2>
+            <div class="card-content">
+                <p class="main-description">
+                    SmartStep was created to address the challenges faced by individuals with visual impairments in navigating their surroundings safely and independently. Traditional mobility aids like canes have limitations in detecting obstacles at various heights and distances. We envisioned a solution that integrates modern technology into everyday wear, offering enhanced spatial awareness and real-time assistance.
+                </p>
+                
+                <div class="feature-section">
+                    <h3>How It Works</h3>
+                    <p>
+                        SmartStep integrates a LiDAR sensor into the laces of a shoe, constantly scanning the environment for obstacles. Here's how the system functions:
+                    </p>
+                    <ul>
+                        <li><strong>Obstacle Detection:</strong> The LiDAR sensor measures distances by emitting light pulses and detecting reflections.</li>
+                        <li><strong>Alert Mechanism:</strong> When an obstacle is detected within a pre-set range, the system activates an alert. This can be in the form of vibrations or audio feedback, depending on the user's preference.</li>
+                        <li><strong>Customizable Feedback:</strong> Users can adjust sensitivity and feedback types through a companion mobile application, ensuring a personalized experience.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><strong>Seamless Integration:</strong> Fits discreetly into any shoe design.</li>
+                        <li><strong>Real-Time Alerts:</strong> Provides instant notifications to prevent accidents.</li>
+                        <li><strong>Energy-Efficient:</strong> Designed to operate for long hours with minimal power consumption.</li>
+                        <li><strong>Expandable Ecosystem:</strong> Can connect with other smart devices for enhanced functionality.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-aos="fade-left" data-aos-duration="1000">
+            <h2 class="section-title">Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <img src="icons/js.svg" alt="JavaScript" class="tech-icon">
+                    <span class="tech-name">JavaScript</span>
+                    <div class="tech-description">
+                        Programming language for creating interactive and dynamic web applications.
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <img src="icons/py.svg" alt="Python" class="tech-icon">
+                    <span class="tech-name">Python</span>
+                    <div class="tech-description">
+                        High-level programming language for backend development.
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <img src="icons/ard.svg" alt="Arduino" class="tech-icon">
+                    <span class="tech-name">Arduino</span>
+                    <div class="tech-description">
+                        Open-source platform for building electronic projects.
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <img src="icons\git.svg" alt="Git" class="tech-icon">
+                    <span class="tech-name">Git</span>
+                    <div class="tech-description">
+                        Version control system for tracking code changes.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-aos="fade-right" data-aos-duration="1000">
+            <h2 class="section-title">Meet the Team</h2>
+            <div class="team-photo-container">
+                <img src="icons/team.JPG" alt="SmartStep Team" class="team-photo">
+                
+                <div class="team-person" data-member="rylen">
+                    <div class="name-tag">Rylen Anil</div>
+                    <div class="member-description">
+                        <h3><strong>CTO</strong></h3>
+                        <p>Designed the backend system and this website</p>
+                    </div>
+                </div>
+
+                <div class="team-person" data-member="adharv">
+                    <div class="name-tag">Adharv Arun</div>
+                    <div class="member-description">
+                        <h3><strong>CHE</strong></h3>
+                        <p>Integrated the LiDAR sensor and wiring.</p>
+                    </div>
+                </div>
+
+                <div class="team-person" data-member="nihal">
+                    <div class="name-tag">Nihal Muhammed</div>
+                    <div class="member-description">
+                        <h3><strong>HoM</strong></h3>
+                        <p>Promoted and presented SmartStep.</p>
+                    </div>
+                </div>
+
+                <div class="team-person" data-member="lakshmi">
+                    <div class="name-tag">Lakshmi Tejash</div>
+                    <div class="member-description">
+                        <h3><strong>Intern</strong></h3>
+                        <p>Excited and happy to contribute.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        async function checkDetection() {
-            try {
-                const response = await fetch('/detect');
-                if (response.ok) {
-                    document.getElementById('alertSound').play(); // Play the audio
-                    alert('Object detected!'); // Optional alert
-                }
-            } catch (error) {
-                console.error("Detection check failed:", error);
-            }
-        }
-        setInterval(checkDetection, 2000); // Poll every 2 seconds
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
     </script>
 </body>
 </html>
