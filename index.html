@@ -14,9 +14,10 @@
 <body>
     <nav>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <a href="#home" data-section="home">Home</a>
+            <a href="#what-is-smartstep" data-section="what-is-smartstep">What is SmartStep?</a>
+            <a href="#technologies" data-section="technologies">Technologies</a>
+            <a href="#team" data-section="team">Meet the Team</a>
         </div>
     </nav>
 
@@ -41,7 +42,7 @@
     </section>
 
     <div class="cards-container">
-        <div class="card" data-aos="fade-right" data-aos-duration="1000">
+        <div class="card" id="what-is-smartstep" data-aos="fade-right" data-aos-duration="1000">
             <h2 class="section-title">What is SmartStep?</h2>
             <div class="card-content">
                 <p class="main-description">
@@ -72,7 +73,7 @@
             </div>
         </div>
 
-        <div class="card" data-aos="fade-left" data-aos-duration="1000">
+        <div class="card" id="technologies" data-aos="fade-left" data-aos-duration="1000">
             <h2 class="section-title">Technologies</h2>
             <div class="tech-grid">
                 <div class="tech-item">
@@ -106,7 +107,7 @@
             </div>
         </div>
 
-        <div class="card" data-aos="fade-right" data-aos-duration="1000">
+        <div class="card" id="team" data-aos="fade-right" data-aos-duration="1000">
             <h2 class="section-title">Meet the Team</h2>
             <div class="team-photo-container">
                 <img src="icons/team.JPG" alt="SmartStep Team" class="team-photo">
@@ -153,6 +154,42 @@
             once: true,
             offset: 100,
             easing: 'ease-out-cubic'
+        });
+
+        // Add smooth scrolling and active state handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            // Handle smooth scrolling
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Handle active state
+            window.addEventListener('scroll', function() {
+                let current = '';
+                const sections = document.querySelectorAll('section, .card');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 </body>

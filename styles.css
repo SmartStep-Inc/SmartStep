@@ -644,3 +644,12 @@ html {
     }
 }
 
+.nav-links a.active {
+    color: #007bff; /* or your preferred highlight color */
+    font-weight: 600;
+}
+
+.nav-links a {
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
