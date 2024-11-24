@@ -489,6 +489,16 @@ html {
     object-position: center 30%;
 }
 
+.shoe-photo {
+    width: 100%;
+    height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: block;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
 .team-person {
     position: absolute;
 }
