@@ -42,14 +42,14 @@
     </section>
 
     <div class="cards-container">
-        <div class="card" id="what-is-smartstep" data-aos="fade-right" data-aos-duration="1000">
-            <h2 class="section-title">What is SmartStep?</h2>
+        <div class="card" id="what-is-smartstep" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="section-title" data-aos="fade-right" data-aos-delay="200">What is SmartStep?</h2>
             <div class="card-content">
-                <p class="main-description">
+                <p class="main-description" data-aos="fade-right" data-aos-delay="400">
                     SmartStep was created to address the challenges faced by individuals with visual impairments in navigating their surroundings safely and independently. Traditional mobility aids like canes have limitations in detecting obstacles at various heights and distances. We envisioned a solution that integrates modern technology into everyday wear, offering enhanced spatial awareness and real-time assistance.
                 </p>
                 
-                <div class="feature-section">
+                <div class="feature-section" data-aos="fade-right" data-aos-delay="600">
                     <h3>How It Works</h3>
                     <p>
                         SmartStep integrates a LiDAR sensor into the laces of a shoe, constantly scanning the environment for obstacles. Here's how the system functions:
@@ -61,7 +61,7 @@
                     </ul>
                 </div>
 
-                <div class="feature-section">
+                <div class="feature-section" data-aos="fade-right" data-aos-delay="800">
                     <h3>Key Features</h3>
                     <ul>
                         <li><strong>Seamless Integration:</strong> Fits discreetly into any shoe design.</li>
@@ -73,31 +73,31 @@
             </div>
         </div>
 
-        <div class="card" id="technologies" data-aos="fade-left" data-aos-duration="1000">
-            <h2 class="section-title">Technologies</h2>
+        <div class="card" id="technologies" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="section-title" data-aos="fade-left" data-aos-delay="200">Technologies</h2>
             <div class="tech-grid">
-                <div class="tech-item">
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="400">
                     <img src="icons/js.svg" alt="JavaScript" class="tech-icon">
                     <span class="tech-name">JavaScript</span>
                     <div class="tech-description">
                         Programming language for creating interactive and dynamic web applications.
                     </div>
                 </div>
-                <div class="tech-item">
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="600">
                     <img src="icons/py.svg" alt="Python" class="tech-icon">
                     <span class="tech-name">Python</span>
                     <div class="tech-description">
                         High-level programming language for backend development.
                     </div>
                 </div>
-                <div class="tech-item">
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="800">
                     <img src="icons/ard.svg" alt="Arduino" class="tech-icon">
                     <span class="tech-name">Arduino</span>
                     <div class="tech-description">
                         Open-source platform for building electronic projects.
                     </div>
                 </div>
-                <div class="tech-item">
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="1000">
                     <img src="icons\git.svg" alt="Git" class="tech-icon">
                     <span class="tech-name">Git</span>
                     <div class="tech-description">
@@ -107,12 +107,12 @@
             </div>
         </div>
 
-        <div class="card" id="team" data-aos="fade-right" data-aos-duration="1000">
-            <h2 class="section-title">Meet the Team</h2>
-            <div class="team-photo-container">
+        <div class="card" id="team" data-aos="zoom-in" data-aos-duration="1200">
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Meet the Team</h2>
+            <div class="team-photo-container" data-aos="zoom-in" data-aos-delay="400">
                 <img src="icons/team.JPG" alt="SmartStep Team" class="team-photo">
                 
-                <div class="team-person" data-member="rylen">
+                <div class="team-person" data-member="rylen" data-aos="fade-up" data-aos-delay="600">
                     <div class="name-tag">Rylen Anil</div>
                     <div class="member-description">
                         <h3><strong>CHO</strong></h3>
@@ -120,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="team-person" data-member="adharv">
+                <div class="team-person" data-member="adharv" data-aos="fade-up" data-aos-delay="700">
                     <div class="name-tag">Adharv Arun</div>
                     <div class="member-description">
                         <h3><strong>CTO</strong></h3>
@@ -128,7 +128,7 @@
                     </div>
                 </div>
 
-                <div class="team-person" data-member="nihal">
+                <div class="team-person" data-member="nihal" data-aos="fade-up" data-aos-delay="800">
                     <div class="name-tag">Nihal Muhammed</div>
                     <div class="member-description">
                         <h3><strong>HoM</strong></h3>
@@ -136,7 +136,7 @@
                     </div>
                 </div>
 
-                <div class="team-person" data-member="lakshmi">
+                <div class="team-person" data-member="lakshmi" data-aos="fade-up" data-aos-delay="900">
                     <div class="name-tag">Lakshmi Tejash</div>
                     <div class="member-description">
                         <h3><strong>Intern</strong></h3>
@@ -190,6 +190,28 @@
                     }
                 });
             });
+        });
+
+        // Add this to your existing script
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                nav.classList.remove('nav-hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !nav.classList.contains('nav-hidden')) {
+                // Scrolling down
+                nav.classList.add('nav-hidden');
+            } else if (currentScroll < lastScroll && nav.classList.contains('nav-hidden')) {
+                // Scrolling up
+                nav.classList.remove('nav-hidden');
+            }
+            lastScroll = currentScroll;
         });
     </script>
 </body>
