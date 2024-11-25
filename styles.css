@@ -494,36 +494,30 @@ html {
     object-position: center 30%;
 }
 
-.shoe-photo {
-    width: 100%;
-    height: 1000px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    display: block;
-    object-fit: cover;
-    object-position: center 30%;
-}
-
 .team-person {
     position: absolute;
 }
 
 .team-person[data-member="rylen"] {
+    position: absolute;
     top: 35%;
     left: 44%;
 }
 
 .team-person[data-member="adharv"] {
+    position: absolute;
     top: 37%;
     left: 32%;
 }
 
 .team-person[data-member="nihal"] {
+    position: absolute;
     top: 35%;
     left: 6.5%;
 }
 
 .team-person[data-member="lakshmi"] {
+    position: absolute;
     top: 37%;
     left: 20%;
 }
@@ -548,8 +542,29 @@ html {
     }
     
     .name-tag {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.8rem;
+        font-size: 0.5rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 12px;
+    }
+
+    .team-person[data-member="rylen"] {
+        top: 45%;
+        left: 75%;
+    }
+
+    .team-person[data-member="adharv"] {
+        top: 60%;
+        left: 50%;
+    }
+
+    .team-person[data-member="nihal"] {
+        top: 45%;
+        left: 25%;
+    }
+
+    .team-person[data-member="lakshmi"] {
+        top: 60%;
+        left: 50%;
     }
 }
 
@@ -1057,6 +1072,118 @@ html {
 
     .team-photo {
         height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-photo {
+        height: 400px;  /* Adjusted height */
+    }
+
+    /* Updated positioning for team members */
+    .team-person[data-member="rylen"] {
+        top: 20%;
+        left: 70%;
+    }
+
+    .team-person[data-member="adharv"] {
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .team-person[data-member="nihal"] {
+        top: 40%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+    }
+
+    .team-person[data-member="lakshmi"] {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .team-photo {
+        height: 300px;  /* Further reduced height */
+    }
+
+    /* Adjusted positions for even smaller screens */
+    .team-person[data-member="rylen"] {
+        top: 45%;
+        left: 75%;
+    }
+
+    .team-person[data-member="adharv"] {
+        top: 45%;
+        left: 50%;
+    }
+
+    .team-person[data-member="nihal"] {
+        top: 45%;
+        left: 25%;
+    }
+
+    .team-person[data-member="lakshmi"] {
+        top: 60%;
+        left: 50%;
+    }
+}
+
+.mobile-team-member {
+    text-align: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-team-member h3 {
+    color: var(--accent-color);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.mobile-team-member p strong {
+    color: #fff;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0.2rem 0;
+    letter-spacing: 0.1em;
+}
+
+.mobile-team-member .member-contribution {
+    color: #999;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.mobile-team-member:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 157, 0.1);
+}
+
+@media (max-width: 768px) {
+    /* Hide the original name tags and descriptions */
+    .team-person, .name-tag, .member-description {
+        display: none !important;
+    }
+
+    /* Show the mobile team cards */
+    .mobile-team-cards {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    /* Adjust team photo */
+    .team-photo {
+        height: 300px;
+        margin-bottom: 1rem;
     }
 }
 
