@@ -44,6 +44,11 @@ nav {
     transition: opacity 0.3s ease;
 }
 
+.nav-link a:visited {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
 .nav-links a:hover {
     opacity: 0.8;
 }
