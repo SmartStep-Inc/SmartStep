@@ -1187,3 +1187,58 @@ html {
     }
 }
 
+@media (min-width: 768px) {
+    /* Hide the mobile team cards on desktop */
+    .mobile-team-cards {
+        display: none;
+    }
+
+    /* Hide the description cards that appear when hovering over nametags */
+    .member-description {
+        display: none;
+    }
+
+    /* Keep the team photo and nametags */
+    .team-photo-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    .team-photo {
+        width: 100%;
+        height: 600px;
+        border-radius: 15px;
+        object-fit: cover;
+        object-position: center 30%;
+    }
+
+    /* Keep nametags visible and positioned */
+    .name-tag {
+        position: absolute;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        border: 1px solid var(--accent-color);
+        border-radius: 20px;
+        color: var(--accent-color);
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    /* Remove the card styling around the team section */
+    #team.card {
+        background: none;
+        backdrop-filter: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Keep only the section title */
+    #team .section-title {
+        margin-bottom: 2rem;
+    }
+}
+
