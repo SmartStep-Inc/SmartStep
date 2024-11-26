@@ -1187,58 +1187,51 @@ html {
     }
 }
 
-@media (min-width: 768px) {
-    /* Hide the mobile team cards on desktop */
+@media (min-width: 769px) {
+    /* Hide mobile team cards completely on desktop */
     .mobile-team-cards {
-        display: none;
+        display: none !important;
     }
 
-    /* Hide the description cards that appear when hovering over nametags */
-    .member-description {
-        display: none;
-    }
-
-    /* Keep the team photo and nametags */
+    /* Show only team photo and name tags by default */
     .team-photo-container {
+        display: block;
         position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow: visible;
     }
 
-    .team-photo {
-        width: 100%;
-        height: 600px;
-        border-radius: 15px;
-        object-fit: cover;
-        object-position: center 30%;
-    }
-
-    /* Keep nametags visible and positioned */
-    .name-tag {
+    /* Style for hover descriptions */
+    .member-description {
         position: absolute;
-        padding: 0.5rem 1rem;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(5px);
-        border: 1px solid var(--accent-color);
-        border-radius: 20px;
-        color: var(--accent-color);
-        font-size: 0.9rem;
-        white-space: nowrap;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.9);
+        padding: 1rem;
+        border-radius: 8px;
+        width: max-content;
+        min-width: 150px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+        z-index: 1000;
     }
 
-    /* Remove the card styling around the team section */
-    #team.card {
-        background: none;
-        backdrop-filter: none;
-        border: none;
-        padding: 0;
-        margin: 0;
+    .team-person:hover .member-description {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(-5px);
     }
+}
 
-    /* Keep only the section title */
-    #team .section-title {
-        margin-bottom: 2rem;
+/* Mobile styles */
+@media (max-width: 768px) {
+    .team-photo-container .member-description {
+        display: none;
+    }
+    
+    .mobile-team-cards {
+        display: block;
     }
 }
 
