@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "play-sound": "^1.1.6",
     "socket.io": "^4.8.1"
   }
